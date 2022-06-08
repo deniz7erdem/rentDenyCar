@@ -23,9 +23,11 @@
         </h1>
         <div class="row">
             <div class="col-12 mb-5">
-                Başlangıç <input type="date" value='<?php echo $_GET['bdate'] ?>' name="bdate" id="bdate">
-                Bitiş <input type="date"  value='<?php echo $_GET['edate'] ?>' name="edate" id="edate">
-                <input type="submit" value="Ara" class="btn btn-dark">
+                <form action="cars.php" method="get">
+                    Başlangıç <input type="date" value='<?php echo $_GET['bdate'] ?>' name="bdate" id="bdate">
+                    Bitiş <input type="date" value='<?php echo $_GET['edate'] ?>' name="edate" id="edate">
+                    <input type="submit" value="Ara" class="btn btn-dark">
+                </form>
             </div>
         </div>
         <!-- Project One -->
@@ -36,11 +38,25 @@
         $res = mysqli_query($baglanti, $sql);
         while ($car = mysqli_fetch_array($res)) {
 
+            $sqlRent = 'SELECT * FROM rent';
+            $resRent = mysqli_query($baglanti, $sqlRent);
+
+            while ($rent = mysqli_fetch_array($resRent)) {
+                if ($car['car_id'] == $rent['car_id']) {
+                    // echo strtotime($rent['rent_E']) . '-' . strtotime($_GET['edate']) . '<br>';
+                    // echo $rent['rent_E'] . '-' . $_GET['edate'];
+                    if (strtotime($rent['rent_E']) > strtotime($_GET['edate'])) {
+                        echo $car['car_id'];
+                        continue 2;
+                    }
+                }
+            }
+
         ?>
             <div class="row">
                 <div class="col-4">
                     <a href="#">
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300" alt="">
+                        <img class="img-fluid rounded mb-3 mb-md-0" src="./img/<?php echo $car['car_img'] ?>" alt="">
                     </a>
 
                 </div>
@@ -53,12 +69,26 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="fw-bold">₺<?php echo $car['car_price'] ?> günlük</p>
-                            <?php $day=strtotime($_GET['edate']) - strtotime($_GET['bdate']);
-                            $day= $day / (60 * 60 * 24); ?>
-                            <p>Toplam: ₺<?php echo $day*$car['car_price'] ?></p>
+                            <?php $day = strtotime($_GET['edate']) - strtotime($_GET['bdate']);
+                            $day = $day / (60 * 60 * 24); ?>
+                            <p>Toplam: ₺<?php echo $day * $car['car_price'] ?></p>
                             <form action="rent.php" method="GET">
                                 <input type="hidden" name="car_id" value="<?php echo $car['car_id'] ?>">
-                                <input type="submit" class="btn btn-primary" value="Kirala">
+                                <input type="hidden" name="rent_B" value="<?php echo $_GET['bdate'] ?>">
+                                <input type="hidden" name="rent_E" value="<?php echo $_GET['edate'] ?>">
+                                
+                                <?php 
+                                
+                                if (!isset($_SESSION['email'])) {
+                                ?>
+                                <a class="btn btn-primary" href="./login.php"> Hemen Giriş yap ve Kirala </a>
+                                <?php 
+                                }else{
+                                    ?>
+                                <input type="submit" class="btn btn-primary" value="Hemen Kirala">
+                                    <?php
+                                }
+                                ?>
                             </form>
                         </div>
                     </div>

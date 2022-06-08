@@ -1,3 +1,31 @@
+<?php
+session_start();
+require('mysql.php');
+if (isset($_POST['email']) and isset($_POST['password'])) {
+
+  $sql = "SELECT * FROM `user` WHERE user_email='" . $_POST['email'] . "' AND user_password='" . $_POST['password']."'";
+
+  $res = mysqli_query($baglanti, $sql);
+
+  if (!$res) {
+    echo '<br>Hata:' . mysqli_error($baglanti); 
+  }
+
+  $say = mysqli_num_rows($res);
+  if ($say == 1) {
+
+    $_SESSION['email'] = $_POST['email'];
+  } else {
+
+    $mesaj = "<h1> Hatalı Kullanıcı adı veya Şifre!</h1>";
+  }
+}
+if (isset($_SESSION['email'])){ 
+   
+  header("Location: index.php"); 
+  
+  }else{ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,14 +70,14 @@
                 <h3 class="login-heading mb-4">Tekrar Hoş geldin!</h3>
 
                 <!-- Sign In Form -->
-                <form>
+                <form action="login.php" method="POST">
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">E-posta Adresi</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    <label for="email">E-posta Adresi</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Şifre</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    <label for="password">Şifre</label>
                   </div>
 
                   <div class="form-check mb-3">
@@ -77,3 +105,4 @@
 </body>
 
 </html>
+<?php } ?>

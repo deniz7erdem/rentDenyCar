@@ -18,10 +18,10 @@
         <div class="container px-4 text-center">
             <h1 class="fw-bolder">denyCar ile Kolay Araç Kiralamaya Hoş Geldin</h1>
             <p class="lead">denyCar çok hızlı bir biçimde araç kiralamanız için tasarlandı.</p>
-            <form action="cars.php" method="GET">
-                <p>Başlangıç:</p> <input type="date" class="btn btn-sm btn-light" name="bdate" id="bdate">
-                Bitiş: <input type="date" class="btn btn-sm btn-light" name="edate" id="edate">
-                <input type="submit" class="btn btn-sm btn-light" value="Ara">
+            <form action="cars.php" method="GET"> <br>
+                <p>Başlangıç: <input type="date" class="btn btn-sm btn-light" name="bdate" id="bdate" value='<?php date_default_timezone_set('Europe/Istanbul'); echo date('Y-m-d', time()); ?>' required>
+                Bitiş: <input type="date" class="btn btn-sm btn-light" name="edate" id="edate" required>
+                <input type="submit" class="btn btn-sm btn-light" value="Ara"></p>
             </form>
 
         </div>
