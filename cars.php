@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -23,7 +24,7 @@
         </h1>
         <div class="row">
             <div class="col-12 mb-5">
-                <form action="cars.php" method="get">
+                <form action="cars.php" method="POST">
                     Başlangıç <input type="date" value='<?php echo $_GET['bdate'] ?>' name="bdate" id="bdate">
                     Bitiş <input type="date" value='<?php echo $_GET['edate'] ?>' name="edate" id="edate">
                     <input type="submit" value="Ara" class="btn btn-dark">
