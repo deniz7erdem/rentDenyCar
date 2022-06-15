@@ -8,10 +8,11 @@ $userid = mysqli_fetch_array($userid);
 // echo $userid['user_id'];
 $sql = "INSERT INTO rent(rent_B,rent_E,user_id,car_id) VALUES ('" . $_POST['rent_B'] . "','" . $_POST['rent_E'] . "'," . $userid['user_id'] . "," . $_POST['car_id'] . ")";
 $res = mysqli_query($baglanti,$sql);
-$hata=false;
-if(!$res){
-    $hata=true;
-}
+echo $res;
+// $hata=false;
+// if(!$res){
+//     $hata=true;
+// }
 ?>
 
 <!DOCTYPE html>

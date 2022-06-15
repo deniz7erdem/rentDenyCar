@@ -73,7 +73,7 @@
                             <?php $day = strtotime($_GET['edate']) - strtotime($_GET['bdate']);
                             $day = $day / (60 * 60 * 24); ?>
                             <p>Toplam: ₺<?php echo $day * $car['car_price'] ?></p>
-                            <form action="rent.php" method="GET">
+                            <form action="rent.php" method="POST">
                                 <input type="hidden" name="car_id" value="<?php echo $car['car_id'] ?>">
                                 <input type="hidden" name="rent_B" value="<?php echo $_GET['bdate'] ?>">
                                 <input type="hidden" name="rent_E" value="<?php echo $_GET['edate'] ?>">
