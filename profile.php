@@ -33,14 +33,13 @@ if (!isset($_SESSION['email'])) {
         <div class="container pt-5">
 
             <!-- Page Heading -->
-            <h1 class="my-4">Tekrar Hoş Geldin Kullanici!
-                <small></small>
+            <h1 class="my-4">Tekrar Hoş Geldin!
             </h1>
             <p>Aşağıda yaptığın kiralamaları görüntelyebilirsin.</p>
-            <?php if(isset($_GET['edit'])){ ?>
-            <div class="alert alert-success" role="alert">
-                Kira tarihleriniz başarıyla düzenlendi!
-            </div>
+            <?php if (isset($_GET['edit'])) { ?>
+                <div class="alert alert-success" role="alert">
+                    Kira tarihleriniz başarıyla düzenlendi!
+                </div>
             <?php } ?>
             <?php
             if (isset($resd)) {
@@ -49,13 +48,13 @@ if (!isset($_SESSION['email'])) {
                     <div class="alert alert-success" role="alert">
                         Kiralamanız başarı ile iptal edildi !
                     </div>
-            <?php
-                }else{
-                    ?>
+                <?php
+                } else {
+                ?>
                     <div class="alert alert-danger" role="alert">
                         Hata!
                     </div>
-                    <?php
+            <?php
                 }
             }
             ?>
@@ -68,10 +67,10 @@ if (!isset($_SESSION['email'])) {
             $userid = mysqli_fetch_array($res);
             $sql = "SELECT * FROM rent WHERE user_id=" . $userid['user_id'];
             $res = mysqli_query($baglanti, $sql);
-           
+
             while ($rent = mysqli_fetch_array($res)) {
                 // if(true){
-                   //COUNT@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Q
+                //COUNT@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Q
                 //     break;
                 // }
                 $rsql = 'SELECT * FROM car WHERE car_id=' . $rent['car_id'];

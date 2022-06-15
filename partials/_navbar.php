@@ -1,16 +1,9 @@
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container px-4"><a class="navbar-brand" href="./">denyCar</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <?php
-                //oturumu başlat 
-
-                session_start();
-
-                //eğer username adlı oturum değişkeni yok ise  
-
-                //login sayfasına yönlendir 
-
                 if (!isset($_SESSION['email'])) {
 
                 ?>

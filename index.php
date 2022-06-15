@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -31,33 +32,26 @@
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
                     <h2>Hakkımızda</h2>
-                    <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+                    <p class="lead">Türkiye'nin öncü araba kiralama platformu denyCar olarak amacımız sizlere çok uygun fiyatlara çok yüksek kalite araç kiralama hizmeti sunmaktır.</p>
                     <ul>
-                        <li>Clickable nav links that smooth scroll to page sections</li>
-                        <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                        <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                        <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+                        <li>Paranız cebinizde kalsın</li>
+                        <li>En yüksek kalitenin keyfini çıkarın</li>
+                        <li>İstediğiniz zamana kiralayın, istediğiniz zaman iptal edin</li>
+                        <li>İstediğiniz şubeden alın, istediğiniz şubeye bırakın</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </section><!-- Services section-->
+    </section><!-- Contact section-->
     <section class="bg-light" id="services">
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
-                    <h2>Services we offer</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
-                </div>
-            </div>
-        </div>
-    </section><!-- Contact section-->
-    <section id="contact">
-        <div class="container px-4">
-            <div class="row gx-4 justify-content-center">
-                <div class="col-lg-8">
-                    <h2>Contact us</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+                    <h2>Bize Ulaşın</h2>
+                    <p class="lead">Herhangi bir sorun, istek veya şikyet için müşteri hizmetlerimizi arayabilir, fax çekebilir veya iletişim eposta adresimize bir posta bırakabilirsiniz.</p>
+                    <p>Telefon : +90 512 345 67 89</p>
+                    <p>Fax : +90 212 345 67 89</p>
+                    <p>E-posta : iletisim@denycartest.xyz.tr</p>
                 </div>
             </div>
         </div>

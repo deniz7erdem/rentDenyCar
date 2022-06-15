@@ -1,7 +1,7 @@
 <!-- Footer-->
-<footer class="py-5 bg-dark">
+<footer class="py-5 bg-dark mt-5 pt-5">
     <div class="container px-4">
-        <p class="m-0 text-center text-white">Copyright &copy; denyCar 2022</p>
+        <p class="m-0 text-center text-white">denyCar <a href="https://github.com/deniz7erdem/rentDenyCar">GitHub</a></p>
     </div>
 </footer>
 <!-- Bootstrap core JS-->
