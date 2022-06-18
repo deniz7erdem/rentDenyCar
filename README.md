@@ -5,7 +5,7 @@
 https://denizerdem.000webhostapp.com/
 
 ## Kurulum
-`$git clone https://github.com/deniz7erdem/AirHockey.git
+`$git clone https://github.com/deniz7erdem/rentDenyCar.git
 Önce SQL dosyası PHPmyAdmin ile 'denycar' isimli veritabanı oluşturularak buraya import edilmeli. Akabinde tüm dosyalar 'htdocs' klasörüne yüklendikten sonra sistem tamamen çalışır durumda olacaktır.
 
 ## Görseller
